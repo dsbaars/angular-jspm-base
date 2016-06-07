@@ -3,6 +3,7 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
+    "stage": 0,
     "optional": [
       "runtime",
       "optimisation.modules.system"
@@ -20,8 +21,13 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+    "less": "github:aaike/jspm-less-plugin@0.0.5",
     "ng-forward": "npm:ng-forward@0.0.1-alpha.12",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "traceur": "github:jmcriffey/bower-traceur@0.0.108",
+    "github:aaike/jspm-less-plugin@0.0.5": {
+      "less.js": "github:distros/less@2.4.0"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },

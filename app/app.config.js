@@ -1,13 +1,6 @@
-function AppConfig($urlRouterProvider, $locationProvider, $stateProvider) {
-  $locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise("/");
-
-  $stateProvider
-    .state('home', {
-      url: "/",
-      templateUrl: "./templates/home.html",
-    });
-
-};
-
-export default AppConfig;
+export default angular
+  .module('app.config', [])
+  .config(['$urlRouterProvider', '$locationProvider', ($urlRouterProvider, $locationProvider) => {
+    $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise("/");
+}]);

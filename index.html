@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
   <base href="/">
   <meta charset="utf-8" />
   <title>Angular JSPM base project</title>
 </head>
 <body>
-  <ui-view></ui-view>
+  <app>Loading...</app>
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
       System.config({
        packages: {'app': {defaultExtension: 'js'}}
       });
-      System.import('./app/app');
+      System.import('app/app');
     </script>
 </body>
 </html>

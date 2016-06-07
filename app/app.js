@@ -1,22 +1,21 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import 'reflect-metadata';
-import {bootstrap} from 'ng-forward';
+import {bootstrap, Component, StateConfig} from 'ng-forward';
 
-import './directives/index';
-import './services/index';
-import './components/index';
+import config from './app.config';
+import {Home} from './home/home';
+import "./app.less!";
 
+@Component({
+    selector: 'app',
+    template: '<ui-view></ui-view>'
+})
+@StateConfig([
+  { url: '/', component: Home, name: 'home' }
+])
+class App { }
 
-import AppConfig from './app.config';
+bootstrap(App, ["ui.router", config.name]);
 
-let app = angular.module('app', [
-  'app.components',
-  'app.directives',
-  'app.services',
-  'ui.router',
-]);
-
-app.config(AppConfig);
-
-export default app;
+export default App;
